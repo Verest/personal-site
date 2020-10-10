@@ -44,7 +44,9 @@ NPM scripts include `npm run build` and `npm run watch`.
 * `getViewPath()` returns the path of a the `view` directory.
 
 ## Todo...
-1. Models, Migrations, Database Seeders, etc.
-2. Error Handling (and developer vs production).
+1. Migrations & Database Seeders.
+2. DB Query Helpers.
 3. View Templates or similar.
 4. Route parameters.
+5. Make DB connection optional.
+6. Error Handling (and developer vs production).

@@ -6,6 +6,7 @@ class PHPSimpleFramework
 {
     public static function initialize()
     {
+        // set up database connection
         new DatabaseConnection();
     }
 
