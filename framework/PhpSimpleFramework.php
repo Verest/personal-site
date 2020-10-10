@@ -6,16 +6,15 @@ class PHPSimpleFramework
     {
         $method = $_SERVER['REQUEST_METHOD'];
         $requestURI = $_SERVER['REQUEST_URI'];
-        $basePath = dirname(__FILE__, 2); //todo: make global helper
 
-        $routes = include("$basePath/routes/web.php");
+        $routes = include(getBasePath("routes/web.php"));
 
         $action = $routes[$method][$requestURI] ?? false;
 
         if ($action) {
-            self::renderView($action, $basePath);
+            self::renderView($action);
         } else {
-            if (is_readable($errorView = "$basePath/view/error/404.php")) {
+            if (is_readable($errorView = getViewPath("error/404.php"))) {
                 include($errorView);
             } else {
                 die("404 not found");
@@ -23,8 +22,9 @@ class PHPSimpleFramework
         }
     }
 
-    private static function renderView($action, $basePath)
+    private static function renderView($action)
     {
+        $viewPath = getViewPath();
         [$controller, $method] = explode('@', $action);
 
         $viewData = (new $controller)->$method();
@@ -41,6 +41,6 @@ class PHPSimpleFramework
             $$name = $value;
         }
 
-        include("$basePath/view/$pathToView");
+        include(getViewPath($pathToView));
     }
 }
