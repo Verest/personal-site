@@ -15,7 +15,11 @@ class PHPSimpleFramework
         if ($action) {
             self::renderView($action, $basePath);
         } else {
-            echo "route not found";
+            if (is_readable($errorView = "$basePath/view/error/404.php")) {
+                include($errorView);
+            } else {
+                die("404 not found");
+            }
         }
     }
 
