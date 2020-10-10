@@ -16,7 +16,8 @@ class PHPSimpleFramework
             [$controller, $method] = explode('@', $action);
 
             $pathToView = (new $controller)->$method();
-            echo(file_get_contents("$basePath/view/$pathToView"));
+            // echo(file_get_contents("$basePath/view/$pathToView"));
+            include("$basePath/view/$pathToView");
         } else {
             echo "route not found";
         }
