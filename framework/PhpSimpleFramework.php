@@ -1,5 +1,7 @@
 <?php 
 
+namespace App\Framework;
+
 class PHPSimpleFramework
 {
     public static function handleRequest()

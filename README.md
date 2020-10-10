@@ -35,7 +35,7 @@ Views are placed in the `views` directory.
 `getBasePath()` returns the path of the applications root directory.
 `getViewPath()` returns the path of a the `view` directory.
 
-### Todo...
+## Todo...
 1. Models, Migrations, Database Seeders, etc.
 2. Controllers returning more than a view, e.g. JSON data.
 3. Error Handling (and developer vs production).
