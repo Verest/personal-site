@@ -6,7 +6,6 @@ class PHPSimpleFramework
     {
         $method = $_SERVER['REQUEST_METHOD'];
         $requestURI = $_SERVER['REQUEST_URI'];
-
         $routes = include(getBasePath("routes/web.php"));
 
         $action = $routes[$method][$requestURI] ?? false;
@@ -24,23 +23,29 @@ class PHPSimpleFramework
 
     private static function renderView($action)
     {
-        $viewPath = getViewPath();
+        [$viewPath, $viewArgs] = self::extractViewDataFromAction($action);
+
+        foreach ($viewArgs as $name => $value) {
+            $$name = $value;
+        }
+
+        include(getViewPath($viewPath));
+    }
+
+    private static function extractViewDataFromAction($action)
+    {
         [$controller, $method] = explode('@', $action);
 
         $viewData = (new $controller)->$method();
         if (is_string($viewData)) {
-            $args = [];
-            $pathToView = $viewData;
+            $viewArgs = [];
+            $viewPath = $viewData;
         } else {
-            //todo: handle potential crashing if not returned correctly
-            $pathToView = $viewData['view'];
-            $args = $viewData['args'] ?? [];
+            //todo: handle potential crashing if controller not configured correctly
+            $viewPath = $viewData['view'];
+            $viewArgs = $viewData['args'] ?? [];
         }
 
-        foreach ($args as $name => $value) {
-            $$name = $value;
-        }
-
-        include(getViewPath($pathToView));
+        return [$viewPath, $viewArgs];
     }
 }
