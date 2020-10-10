@@ -9,7 +9,7 @@ class MainController
         return [
             "view" => "main/index.php",
             "args" => [
-                "testArg" => "trying to echo this!"
+                "defaultPage" => "This is the default page."
             ]
         ];
     }
