@@ -6,6 +6,6 @@ class MainController
 {
     public function index()
     {
-        return 'index route of main controller';
+        return "main/index.php";
     }
 }
