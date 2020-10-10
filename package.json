@@ -1,0 +1,33 @@
+{
+  "name": "php-simple-framework",
+  "version": "1.0.0",
+  "description": "Simple MVC framework for PHP",
+  "main": "index.js",
+  "scripts": {
+    "build": "./node_modules/.bin/webpack",
+    "watch": "./node_modules/.bin/webpack -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Verest/php-simple-framework.git"
+  },
+  "author": "Richie Black",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Verest/php-simple-framework/issues"
+  },
+  "homepage": "https://github.com/Verest/php-simple-framework#readme",
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^4.3.0",
+    "sass": "^1.27.0",
+    "sass-loader": "^10.0.3",
+    "style-loader": "^2.0.0",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "url-loader": "^4.1.1",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^4.0.0"
+  }
+}

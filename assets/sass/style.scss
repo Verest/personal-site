@@ -1,0 +1,13 @@
+div {
+    // Center element in page.
+    transform: translate(-50%, -50%);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    text-align: center;
+
+    // BG with URL embedded image.
+    padding: 45px;
+    border-radius: 15px;
+    background: url("../images/gray.png") repeat;
+}

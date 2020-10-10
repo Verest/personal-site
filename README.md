@@ -31,13 +31,16 @@ return [
 ## Views
 Views are placed in the `views` directory.
 
+## Assets
+Basic Webpack configuration included with asset base located at `/assets/index.js`. Includes Babel, Sass, and URL loaders.
+NPM scripts include `npm run build` and `npm run watch`.
+
 ## Helpers
-`getBasePath()` returns the path of the applications root directory.
-`getViewPath()` returns the path of a the `view` directory.
+* `getBasePath()` returns the path of the applications root directory.
+* `getViewPath()` returns the path of a the `view` directory.
 
 ## Todo...
 1. Models, Migrations, Database Seeders, etc.
 2. Controllers returning more than a view, e.g. JSON data.
 3. Error Handling (and developer vs production).
 4. View Templates or similar.
-5. Default assets pipeline for CSS and JS, likely webpack with SASS/Babel.

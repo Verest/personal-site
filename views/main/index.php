@@ -1,18 +1,9 @@
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <title>Default page for PHPSimpleFramework</title>
 
         <meta name="description" content="Default page for PHPSimpleFramework">
-
-        <style>
-            div {
-                transform: translate(-50%, -50%);
-                position: absolute;
-                left: 50%;
-                top: 50%;
-                text-align: center;
-            }
-        </style>
     </head>
 
     <body>
@@ -21,5 +12,7 @@
 
             <p><?= $defaultPage ?></p>
         </div>
+
+        <script src="/js/app.js"></script>
     </body>
 </html>
