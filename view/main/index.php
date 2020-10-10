@@ -5,6 +5,6 @@
 
     <body>
         <p>I am HTML</p>
-        <p><?= "testing echo" ?></p>
+        <p><?= $testArg ?></p>
     </body>
 </html>

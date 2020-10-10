@@ -6,20 +6,37 @@ class PHPSimpleFramework
     {
         $method = $_SERVER['REQUEST_METHOD'];
         $requestURI = $_SERVER['REQUEST_URI'];
-        $basePath = dirname(__FILE__, 2);
+        $basePath = dirname(__FILE__, 2); //todo: make global helper
 
         $routes = include("$basePath/routes/web.php");
 
         $action = $routes[$method][$requestURI] ?? false;
 
         if ($action) {
-            [$controller, $method] = explode('@', $action);
-
-            $pathToView = (new $controller)->$method();
-            // echo(file_get_contents("$basePath/view/$pathToView"));
-            include("$basePath/view/$pathToView");
+            self::renderView($action, $basePath);
         } else {
             echo "route not found";
         }
+    }
+
+    private static function renderView($action, $basePath)
+    {
+        [$controller, $method] = explode('@', $action);
+
+        $viewData = (new $controller)->$method();
+        if (is_string($viewData)) {
+            $args = [];
+            $pathToView = $viewData;
+        } else {
+            //todo: handle potential crashing if not returned correctly
+            $pathToView = $viewData['view'];
+            $args = $viewData['args'] ?? [];
+        }
+
+        foreach ($args as $name => $value) {
+            $$name = $value;
+        }
+
+        include("$basePath/view/$pathToView");
     }
 }

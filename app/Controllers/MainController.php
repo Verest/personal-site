@@ -6,6 +6,11 @@ class MainController
 {
     public function index()
     {
-        return "main/index.php";
+        return [
+            "view" => "main/index.php",
+            "args" => [
+                "testArg" => "trying to echo this!"
+            ]
+        ];
     }
 }
