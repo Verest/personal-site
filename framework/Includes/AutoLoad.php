@@ -1,5 +1,5 @@
 <?php
-namespace Framework;
+namespace Framework\Includes;
 
 class AutoLoad
 {
@@ -20,7 +20,7 @@ class AutoLoad
 
         list($path, $className) = $this->parsePathParts($pathParts);
 
-        return dirname(__FILE__, 2) . $path . $className;
+        return getBasePath($path . $className);
     }
 
     private function parsePathParts($pathParts)

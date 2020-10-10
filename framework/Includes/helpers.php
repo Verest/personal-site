@@ -11,7 +11,7 @@ if (! function_exists('getBasePath')) {
             $path = "/$path";
         }
     
-        return dirname(__FILE__, 2) . $path;
+        return dirname(__FILE__, 3) . $path;
     }
 }
 
@@ -24,14 +24,25 @@ if (! function_exists('getViewPath')) {
             $path = "/$path";
         }
 
-        return dirname(__FILE__, 2) . "/views$path";
+        return dirname(__FILE__, 3) . "/views$path";
     }
 }
-
 
 if (! function_exists('response')) {
     function response($type, $data)
     {
        return (new Response($type, $data))->get();
+    }
+}
+
+if (! function_exists('config')) {
+    function config($name)
+    {
+        if (is_readable($configFile = getBasePath("config/$name.php"))) {
+            return include($configFile);
+        }
+    
+        //todo: create custom exception and throw here.
+        return [];
     }
 }

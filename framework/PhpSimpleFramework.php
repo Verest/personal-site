@@ -4,6 +4,11 @@ namespace Framework;
 
 class PHPSimpleFramework
 {
+    public static function initialize()
+    {
+        new DatabaseConnection();
+    }
+
     public static function handleRequest()
     {
         $method = $_SERVER['REQUEST_METHOD'];
@@ -26,7 +31,7 @@ class PHPSimpleFramework
     private static function sendResponse($action)
     {
         [$controller, $method] = explode('@', $action);
-
+        
         //todo: error handling
         (new $controller)->$method()->send();
     }

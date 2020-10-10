@@ -47,3 +47,4 @@ NPM scripts include `npm run build` and `npm run watch`.
 1. Models, Migrations, Database Seeders, etc.
 2. Error Handling (and developer vs production).
 3. View Templates or similar.
+4. Route parameters.

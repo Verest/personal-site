@@ -2,6 +2,6 @@
 
 return [
     'GET' => [
-        '/' => 'App\Controllers\MainController@index'
+        '/' => '\App\Controllers\MainController@index'
     ],
 ];
