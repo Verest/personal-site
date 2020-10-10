@@ -1,5 +1,7 @@
 <?php
 
+use Framework\Response;
+
 if (! function_exists('getBasePath')) {
     function getBasePath($path = '')
     {
@@ -23,5 +25,13 @@ if (! function_exists('getViewPath')) {
         }
 
         return dirname(__FILE__, 2) . "/views$path";
+    }
+}
+
+
+if (! function_exists('response')) {
+    function response($type, $data)
+    {
+       return (new Response($type, $data))->get();
     }
 }

@@ -6,11 +6,11 @@ class MainController
 {
     public function index()
     {
-        return [
+        return response('view', [
             "view" => "main/index.php",
             "args" => [
                 "defaultPage" => "This is the default page."
             ]
-        ];
+        ]);
     }
 }

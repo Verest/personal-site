@@ -1,6 +1,6 @@
 <?php 
 
-namespace App\Framework;
+namespace Framework;
 
 class PHPSimpleFramework
 {
@@ -13,7 +13,7 @@ class PHPSimpleFramework
         $action = $routes[$method][$requestURI] ?? false;
 
         if ($action) {
-            self::renderView($action);
+            self::sendResponse($action);
         } else {
             if (is_readable($errorView = getViewPath("error/404.php"))) {
                 include($errorView);
@@ -23,31 +23,11 @@ class PHPSimpleFramework
         }
     }
 
-    private static function renderView($action)
-    {
-        [$viewPath, $viewArgs] = self::extractViewDataFromAction($action);
-
-        foreach ($viewArgs as $name => $value) {
-            $$name = $value;
-        }
-
-        include(getViewPath($viewPath));
-    }
-
-    private static function extractViewDataFromAction($action)
+    private static function sendResponse($action)
     {
         [$controller, $method] = explode('@', $action);
 
-        $viewData = (new $controller)->$method();
-        if (is_string($viewData)) {
-            $viewArgs = [];
-            $viewPath = $viewData;
-        } else {
-            //todo: handle potential crashing if controller not configured correctly
-            $viewPath = $viewData['view'];
-            $viewArgs = $viewData['args'] ?? [];
-        }
-
-        return [$viewPath, $viewArgs];
+        //todo: error handling
+        (new $controller)->$method()->send();
     }
 }
