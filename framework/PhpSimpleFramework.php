@@ -12,7 +12,9 @@ class PHPSimpleFramework
         $action = $routes[$method][$requestURI] ?? false;
 
         if ($action) {
-            echo "route found";
+            [$controller, $method] = explode('@', $action);
+
+            echo (new $controller)->$method();
         } else {
             echo "route not found";
         }
