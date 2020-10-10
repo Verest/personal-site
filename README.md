@@ -13,19 +13,23 @@ return [
 ```
 
 ## Controllers
-Controller classes are placed in `app/Controllers`. For the present moment, a view path being returned is assumed. A view
+Controller classes are placed in `app/Controllers`. Supported return values include a view or JSON data. A view
 path is returned in one of two formats and is relative to the `view` folder.
 ```
-// Without Arguments
-return "path/to/view.php";
+// Without Arguments (view only)
+return response("view", "<path to view>");
 
 // With Arguments
-return [
-    "view" => "path/to/view.php",
-    "args" => [
-        "<name1>" => "<value1>",
-    ]
-]
+return response("<'view' or 'json'>", $data);
+
+// Where $data above is...
+$data = [
+    'view' => '<path to view>', 
+    'args' => ['<variableName1>' => '<value1>', ...]
+];
+
+// ...or...
+$data = <something JSON-able, e.g. an array>;
 ```
 
 ## Views
@@ -41,6 +45,5 @@ NPM scripts include `npm run build` and `npm run watch`.
 
 ## Todo...
 1. Models, Migrations, Database Seeders, etc.
-2. Controllers returning more than a view, e.g. JSON data.
-3. Error Handling (and developer vs production).
-4. View Templates or similar.
+2. Error Handling (and developer vs production).
+3. View Templates or similar.
