@@ -1,3 +1,4 @@
+.vscode
 *.htaccess
 config/env.php
 node_modules
