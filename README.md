@@ -46,13 +46,14 @@ Basic Webpack configuration included with asset base located at `/assets/index.j
 NPM scripts include `npm run build` and `npm run watch`.
 
 ## Helpers
-* `getBasePath()` returns the path of the applications root directory.
-* `getViewPath()` returns the path of a the `view` directory.
+* `getBasePath(<optional appends>)` returns the path of the applications root directory.
+* `getViewPath(<optional appends>)` returns the path of a the `view` directory.
+* `config(<name>)` returns associated `<name>.php` config located in `/config`.
 
 ## Todo...
 1. Migrations & Database Seeders.
-2. DB Query Helpers.
+2. DB Query Helpers & ORM.
 3. View Templates or similar.
 4. Route parameters.
-5. Make DB connection optional.
-6. Error Handling (and developer vs production).
+5. Error Handling (and develop vs production).
+6. Shell commands.
