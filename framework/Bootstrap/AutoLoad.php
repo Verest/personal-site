@@ -1,5 +1,5 @@
 <?php
-namespace Framework\Includes;
+namespace Framework\Bootstrap;
 
 class AutoLoad
 {
