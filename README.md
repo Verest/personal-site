@@ -32,8 +32,14 @@ $data = [
 $data = <something JSON-able, e.g. an array>;
 ```
 
+## Models
+Any model classes go within `app/Models` and should extend `Framework/BaseModel`. At the moment, no ORM exists, solely a object property called `$db` which contains a PDO connection to the database configured.
+
 ## Views
 Views are placed in the `views` directory.
+
+## Database
+See `config/env.example.php` for the database connection parameters. Optional.
 
 ## Assets
 Basic Webpack configuration included with asset base located at `/assets/index.js`. Includes Babel, Sass, and URL loaders.
