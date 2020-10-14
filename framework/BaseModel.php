@@ -8,6 +8,8 @@ class BaseModel
 
     protected $table = null;
 
+    protected $attributes = [];
+
     public function __construct()
     {
         if (DatabaseConnection::$dbConnection) {
@@ -33,7 +35,7 @@ class BaseModel
 
             // todo: swap these from object properties to a custom wrapper.
             foreach ($row as $columnName => $value) {
-                $model->$columnName = $value;
+                $model->attributes[$columnName] = $value;
             }
 
             $results[] = $model;

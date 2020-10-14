@@ -33,7 +33,10 @@ $data = <something JSON-able, e.g. an array>;
 ```
 
 ## Models
-Any model classes go within `app/Models` and should extend `Framework/BaseModel`. At the moment, no ORM exists, solely a object property called `$db` which contains a PDO connection to the database configured.
+Any model classes go within `app/Models` and should extend `Framework/BaseModel`. At the moment, no full ORM exists - heavy work in progress both in documentation and function.
+1. Protected property `$db` contains a PDO connection to the database configured. 
+2. `protected $table` should be set to the table name.  
+3. The `->all()` method returns an array of model objects with the a `attributes` property containing the row's data.
 
 ## Views
 Views are placed in the `views` directory.
