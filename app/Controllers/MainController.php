@@ -8,13 +8,6 @@ class MainController
 {
     public function index()
     {
-        $test = Model::all();
-
-        return response('view', [
-            "view" => "main/index.php",
-            "args" => [
-                "defaultPage" => "This is the default page."
-            ]
-        ]);
+        return response('view', "main/index.php");
     }
 }

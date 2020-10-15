@@ -1,0 +1,15 @@
+/* COLOR PALLETS */
+// todo: colors
+
+/*BREAK POINTS*/
+$media-s              : 550px;
+$media-m              : 768px;
+$media-l              : 1024px;
+$media-xl             : 1440px;
+
+$breakpoints:(
+  "s": $media-s,
+  "m": $media-m,
+  "l": $media-l,
+  "xl": $media-xl,
+);
