@@ -30,13 +30,13 @@
             
         </header>
 
-        <main>
+        <main class='container'>
            <h1>About Me</h1>
         </main>
 
 
         <footer>
-            <!-- todo: footer -->
+            Todo: footer content
         </footer>
 
         <script src="/js/app.js"></script>
