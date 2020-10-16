@@ -9,8 +9,6 @@ class AutoLoad
 
         if (is_readable($filePath)) {
             include_once $filePath;
-        } else {
-            die("$filePath does not exist.");
         }
     }
 
