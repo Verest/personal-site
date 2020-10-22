@@ -24,18 +24,14 @@ class BaseModel
 
     public function select($fields = '*')
     {
-        if (!$this->db || !$this->table) {
-            return false;
-        }
+        $this->validateDBConnectionExists();
+        // todo: validate $fields.
 
         $fields = is_array($fields) ? $fields : [$fields];
 
         $sql = 'SELECT ';
-        foreach ($fields as $field) {
-            $sql .= "`$field`, ";
-        }
-
-        $sql = rtrim($sql, ', ');
+        $sql .= array_reduce($fields, fn($carry, $field) => $carry . "`$field`,", '');
+        $sql = rtrim($sql, ',');
         $sql .= " FROM {$this->table}";
 
         return $this->query($sql);
@@ -43,9 +39,7 @@ class BaseModel
 
     public function all()
     {
-        if (!$this->db || !$this->table) {
-            return false;
-        }
+       $this->validateDBConnectionExists();
 
         return $this->query("SELECT * FROM $this->table");
     }
@@ -70,5 +64,13 @@ class BaseModel
         }
 
         return $model;
+    }
+
+    private function validateDBConnectionExists()
+    {
+        if (!$this->db || !$this->table) {
+            // todo: custom exception
+            throw new \Exception('Database connection or table not configured.');
+        }
     }
 }
