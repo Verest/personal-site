@@ -37,6 +37,7 @@ Any model classes go within `app/Models` and should extend `Framework/BaseModel`
 1. Protected property `$db` contains a PDO connection to the database configured. 
 2. `protected $table` should be set to the table name.  
 3. The `->all()` method returns an array of model objects with the a `attributes` property containing the row's data.
+4. The `->select()` method accepts a string or an array of columns, and returns an array of model objects.
 
 ## Views
 Views are placed in the `views` directory.

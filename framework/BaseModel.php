@@ -26,12 +26,10 @@ class BaseModel
     {
         $this->validateDBConnectionExists();
         // todo: validate $fields.
-
-        $fields = is_array($fields) ? $fields : [$fields];
+        $fields = (array)$fields;
 
         $sql = 'SELECT ';
-        $sql .= array_reduce($fields, fn($carry, $field) => $carry . "`$field`,", '');
-        $sql = rtrim($sql, ',');
+        $sql .= rtrim(array_reduce($fields, fn($carry, $field) => $carry . "`$field`,", ''), ',');
         $sql .= " FROM {$this->table}";
 
         return $this->query($sql);
