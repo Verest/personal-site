@@ -12,7 +12,7 @@ const HTML = () => {
             <p>
                 I am a Full Stack Developer with a passion for personal development. I am constantly changing, growing, and 
                 finding new and better ways go move throughout my life. I am commonly learning new things, reading,
-                journaling, socializing, or engaging in men's work.
+                journaling, socializing, engaging in men's work, or practicing music.
             </p>
 
             <h2>Site Purpose</h2>
