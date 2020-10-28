@@ -4,8 +4,8 @@ import Header from './layout/Header';
 import Footer from './layout/Footer';
 
 const HTML = () => {
-    return [
-        <Header />,
+    return <>
+        <Header />
 
         <main class='container'>
             <h1>About Me</h1>
@@ -20,10 +20,19 @@ const HTML = () => {
                 The purpose of this site is largely to practice hosting on AWS, setting up my own server configurations, etc.
                 As always, this might change in the future.
             </p>
-        </main>,
+
+            <h2>My Tech Stack</h2>
+            <ul>
+                <li>PHP</li>
+                <li>Javascript</li>
+                <li>Apache</li>
+                <li>jQuery</li>
+                <li>Todo...</li>
+            </ul>
+        </main>
 
        <Footer />
-    ];
+       </>
 };
 
 render(
