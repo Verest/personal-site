@@ -22,13 +22,49 @@ const HTML = () => {
             </p>
 
             <h2>My Tech Stack</h2>
-            <ul>
-                <li>PHP</li>
-                <li>Javascript</li>
-                <li>Apache</li>
-                <li>jQuery</li>
-                <li>Todo...</li>
-            </ul>
+            <div className="row">
+                <div className="col-6">
+                    <h3>Languages n Libraries</h3>
+                    <ul>
+                        <li>PHP</li>
+                        <li>Javascript/jQuery</li>
+                        <li>Bash</li>
+                        <li>MySQL</li>
+                        <li>SASS/CSS</li>
+                        <li>PHPUnit</li>
+                    </ul>
+                </div>
+
+                <div className="col-6">
+                     <h3>Development Tools</h3>
+                     <ul>
+                        <li>Webpack</li>
+                        <li>Gulp</li>
+                        <li>Git</li>
+                        <li>PHPStorm</li>
+                        <li>VsCode</li>
+                    </ul>
+                </div>
+
+                <div className="col-6">
+                     <h3>Frameworks</h3>
+                     <ul>
+                        <li>Laravel</li>
+                        <li>React</li>
+                    </ul>
+                </div>
+
+                <div className="col-6">
+                     <h3>Server Related</h3>
+                     <ul>
+                        <li>Linux</li>
+                        <li>Apache</li>
+                    </ul>
+                </div>
+
+                <div className="col-6"></div>
+            </div>
+            
         </main>
 
        <Footer />
