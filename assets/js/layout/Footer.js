@@ -5,11 +5,11 @@ const Footer = () => {
         <footer>
             <div class="container">
                 <div class="row pv-vr">
-                    <div class="col-s-6">
+                    <div class="col-s-6 footer-lhs">
                         <a class='footer-item' target="_blank" href="https://github.com/Verest">My Github</a>
                     </div>
 
-                    <div class="col-s-6 text-right">
+                    <div class="col-s-6 footer-rhs">
                         <a class='footer-item' href="mailto:richie@richieblack.me">
                             Email: richie@richieblack.me
                         </a>

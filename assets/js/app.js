@@ -2,13 +2,20 @@ import React from 'react';
 import { render } from 'react-dom';
 import Header from './layout/Header';
 import Footer from './layout/Footer';
+import personalPhoto from '../images/richieBlack-bw.jpg';
 
 const HTML = () => {
     return <>
         <Header />
 
         <main class='container'>
-            <h1>About Me</h1>
+            <h1>
+                About Me
+
+                <img className="personal-picture" src={personalPhoto} alt="Picture of Richie Black smiling."/>
+
+            </h1>
+            
             <p>
                 I am a Full Stack Developer with a passion for personal development. I am constantly changing, growing, and 
                 finding new and better ways go move throughout my life. I am commonly learning new things, reading,
@@ -22,8 +29,8 @@ const HTML = () => {
             </p>
 
             <h2>My Tech Stack</h2>
-            <div className="row">
-                <div className="col-6">
+            <div className="row mb-vr">
+                <div className="col-s-6">
                     <h3>Languages n Libraries</h3>
                     <ul>
                         <li>PHP</li>
@@ -35,7 +42,7 @@ const HTML = () => {
                     </ul>
                 </div>
 
-                <div className="col-6">
+                <div className="col-s-6">
                      <h3>Development Tools</h3>
                      <ul>
                         <li>Webpack</li>
@@ -46,7 +53,7 @@ const HTML = () => {
                     </ul>
                 </div>
 
-                <div className="col-6">
+                <div className="col-s-6">
                      <h3>Frameworks</h3>
                      <ul>
                         <li>Laravel</li>
@@ -54,15 +61,13 @@ const HTML = () => {
                     </ul>
                 </div>
 
-                <div className="col-6">
+                <div className="col-s-6">
                      <h3>Server Related</h3>
                      <ul>
                         <li>Linux</li>
                         <li>Apache</li>
                     </ul>
                 </div>
-
-                <div className="col-6"></div>
             </div>
             
         </main>

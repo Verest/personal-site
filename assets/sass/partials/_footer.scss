@@ -1,7 +1,11 @@
 footer {
     background: $gray;
     color:white;
-    padding: 30px;
+    padding: 30px 15px;
+
+    @include mq('s') {
+        padding: 30px;
+    }
 
     a {
         color: white;
@@ -11,5 +15,25 @@ footer {
     .footer-item {
         border: 1px solid white;
         padding: $base-vr-gap / 2;
+    }
+
+    .footer-rhs,
+    .footer-lhs {
+        align-items: center;
+    }
+
+    .footer-lhs {
+        margin-bottom: $base-vr-gap;
+
+        @include mq('s') {
+            margin-bottom: 0;
+            align-items: flex-start;
+        }
+    }
+
+    .footer-rhs {
+        @include mq('s') {
+            align-items: flex-end;
+        }
     }
 }
